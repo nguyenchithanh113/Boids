@@ -33,6 +33,9 @@ namespace Boids.Systems
         {
             var dependency = state.Dependency;
             int boidCount = _boidQuery.CalculateEntityCount();
+            
+            if(boidCount == 0) return;
+            
             BoidSetting boidSetting = SystemAPI.GetSingleton<BoidSetting>();
 
             NativeArray<Velocity> velocityArr =

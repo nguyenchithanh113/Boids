@@ -13,6 +13,7 @@ namespace Boids.Authorings
                 Entity entity = GetEntity(TransformUsageFlags.Dynamic);
                 
                 AddComponent(entity, new Boid());
+                AddComponent(entity, new Velocity());
             }
         }
     }

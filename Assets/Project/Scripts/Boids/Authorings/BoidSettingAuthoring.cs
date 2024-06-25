@@ -16,6 +16,8 @@ namespace Boids.Authorings
         public float alignmentWeight = 2;
         public float cohesionWeight = 1;
         public float separationWeight = 3;
+
+        public GameObject boidPrefab;
         
         
         private class BoidSettingAuthoringBaker : Baker<BoidSettingAuthoring>
@@ -34,6 +36,8 @@ namespace Boids.Authorings
                     alignmentWeight = authoring.alignmentWeight,
                     cohesionWeight = authoring.cohesionWeight,
                     separationWeight = authoring.cohesionWeight,
+                    
+                    boidPrefab = GetEntity(authoring.boidPrefab, TransformUsageFlags.Dynamic),
                 });
             }
         }
