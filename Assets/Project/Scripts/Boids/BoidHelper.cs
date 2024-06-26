@@ -8,6 +8,8 @@ namespace Boids
         const int rayCount = 300;
         public static readonly float3[] sphereRays;
 
+        //I dont know how this shit works, but it generates an uniform distribution of points
+        //on a spheres, so you can basically do raycast in all directions
         static BoidHelper () {
             sphereRays = new float3[rayCount];
 
@@ -38,6 +40,7 @@ namespace Boids
             return array;
         }
         
+        //As the name suggest, the result is the vector you can add to velocity to steer in desired direction
         public static float3 SteerToward(float3 velocity, float3 direction, float maxSpeex)
         {
             return math.normalizesafe(direction) * maxSpeex - velocity;
