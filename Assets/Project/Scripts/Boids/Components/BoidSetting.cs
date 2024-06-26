@@ -14,7 +14,9 @@ namespace Boids.Components
         public float alignmentWeight;
         public float cohesionWeight;
         public float separationWeight;
+        public float collisionWeight;
 
+        public int totalBoids;
         public Entity boidPrefab;
     }
 }

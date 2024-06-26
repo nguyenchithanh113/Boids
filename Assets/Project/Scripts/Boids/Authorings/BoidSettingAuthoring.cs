@@ -16,6 +16,9 @@ namespace Boids.Authorings
         public float alignmentWeight = 2;
         public float cohesionWeight = 1;
         public float separationWeight = 3;
+        public float collisionWeight = 20;
+
+        public int totalBoids = 100;
 
         public GameObject boidPrefab;
         
@@ -35,8 +38,10 @@ namespace Boids.Authorings
                     collisionRange = authoring.collisionRange,
                     alignmentWeight = authoring.alignmentWeight,
                     cohesionWeight = authoring.cohesionWeight,
-                    separationWeight = authoring.cohesionWeight,
+                    separationWeight = authoring.separationWeight,
+                    collisionWeight = authoring.collisionWeight,
                     
+                    totalBoids = authoring.totalBoids,
                     boidPrefab = GetEntity(authoring.boidPrefab, TransformUsageFlags.Dynamic),
                 });
             }
